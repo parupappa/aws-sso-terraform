@@ -1,0 +1,1 @@
+# terraform.tfvarsはvariables.tfで定義されたvariableに値を代入するところです。
