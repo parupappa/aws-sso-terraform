@@ -4,8 +4,6 @@ variable "region" {
   default     = "ap-northeast-1"
 }
 # terraform cloudから取得
-# https://app.terraform.io/app/assignnavi/workspaces/terraform-lts-link/variables
-# 使用アクセスキー: https://us-east-1.console.aws.amazon.com/iamv2/home?region=ap-northeast-1#/users/details/terraform?section=security_credentials
 variable "AWS_ACCESS_KEY_ID" {}
 variable "AWS_SECRET_ACCESS_KEY" {}
 
@@ -59,11 +57,7 @@ variable "aws_sso_admin_customer_policies" {
 variable "aws_sso_guest_managed_policies" {
   description = "The list of guest managed policies"
   type        = list(string)
-  default = [
-    "arn:aws:iam::aws:policy/AmazonWorkDocsFullAccess",
-    "arn:aws:iam::aws:policy/AmazonS3FullAccess",
-    "arn:aws:iam::aws:policy/IAMUserChangePassword"
-  ]
+  default = []
 }
 variable "aws_sso_guest_customer_policies" {
   description = "The list of guest customer policies"
@@ -74,17 +68,7 @@ variable "aws_sso_guest_customer_policies" {
 variable "aws_sso_developer_managed_policies" {
   description = "The list of developer managed policies"
   type        = list(string)
-  default = [
-    "arn:aws:iam::aws:policy/AmazonS3FullAccess",
-    "arn:aws:iam::aws:policy/CloudWatchFullAccess",
-    "arn:aws:iam::aws:policy/AmazonEC2FullAccess",
-    "arn:aws:iam::aws:policy/AmazonVPCFullAccess",
-    "arn:aws:iam::aws:policy/AmazonRDSFullAccess",
-    "arn:aws:iam::aws:policy/AmazonRoute53FullAccess",
-    "arn:aws:iam::aws:policy/AmazonEventBridgeFullAccess",
-    "arn:aws:iam::aws:policy/AWSSSOReadOnly",
-    "arn:aws:iam::aws:policy/IAMReadOnlyAccess"
-  ]
+  default = []
 }
 variable "aws_sso_developer_customer_policies" {
   description = "The list of developer customer policies"
@@ -95,15 +79,7 @@ variable "aws_sso_developer_customer_policies" {
 variable "aws_sso_system_managed_policies" {
   description = "The list of system managed policies"
   type        = list(string)
-  default = [
-    "arn:aws:iam::aws:policy/AmazonS3FullAccess",
-    "arn:aws:iam::aws:policy/AmazonEC2FullAccess",
-    "arn:aws:iam::aws:policy/AmazonVPCFullAccess",
-    "arn:aws:iam::aws:policy/AmazonRDSFullAccess",
-    "arn:aws:iam::aws:policy/AmazonRoute53FullAccess",
-    "arn:aws:iam::aws:policy/AmazonSESReadOnlyAccess"
-
-  ]
+  default = []
 }
 
 variable "aws_sso_system_customer_policies" {
